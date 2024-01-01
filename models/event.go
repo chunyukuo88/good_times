@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type Event struct {
 	ID          int
@@ -17,6 +19,6 @@ func (e Event) Save() {
 	events = append(events, e)
 }
 
-func getAllEvents() []Event {
-
+func GetAllEvents() string {
+	return "howzit"
 }

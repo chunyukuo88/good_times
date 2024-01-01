@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/chunyukuo88/good_times/models"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,5 +16,10 @@ func main() {
 }
 
 func getEvents(context *gin.Context) {
-	context.JSON(http.StatusOK, gin.H{"message": "howzit howzit"})
+	events := models.GetAllEvents()
+	context.JSON(http.StatusOK, events)
+}
+
+func createEvent(context *gin.Context) {
+
 }
