@@ -20,7 +20,9 @@ func InitDB() {
 	DB.SetMaxOpenConns(10)
 	DB.SetMaxIdleConns(5)
 
+	fmt.Println("About to create tables...")
 	createTables()
+	fmt.Println("Tables created")
 }
 
 func createTables() {

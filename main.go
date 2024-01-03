@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/chunyukuo88/good_times/db"
@@ -9,6 +10,7 @@ import (
 )
 
 func main() {
+	fmt.Println("About to create tables...")
 	db.InitDB()
 	server := gin.Default()
 
@@ -21,6 +23,7 @@ func main() {
 func getEvents(context *gin.Context) {
 	events := models.GetAllEvents()
 	context.JSON(http.StatusOK, events)
+	fmt.Println("Events obtained.")
 }
 
 func createEvent(context *gin.Context) {
